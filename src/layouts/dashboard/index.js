@@ -31,9 +31,8 @@ import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatist
 import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
 import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 
-// Dashboard components
-import Projects from "layouts/dashboard/components/Projects";
-import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
+// Label Compliance Monitor component
+import LabelComplianceMonitor from "./components/LabelComplianceMonitor";
 
 function Dashboard() {
   const { sales, tasks } = reportsLineChartData;
@@ -48,12 +47,12 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="dark"
                 icon="weekend"
-                title="Bookings"
+                title="Labels Monitored"
                 count={281}
                 percentage={{
                   color: "success",
                   amount: "+55%",
-                  label: "than lask week",
+                  label: "than last week",
                 }}
               />
             </MDBox>
@@ -62,7 +61,7 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 icon="leaderboard"
-                title="Today's Users"
+                title="Verified Labels"
                 count="2,300"
                 percentage={{
                   color: "success",
@@ -77,8 +76,8 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="success"
                 icon="store"
-                title="Revenue"
-                count="34k"
+                title="Compliance Rate"
+                count="94%"
                 percentage={{
                   color: "success",
                   amount: "+1%",
@@ -92,7 +91,7 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="primary"
                 icon="person_add"
-                title="Followers"
+                title="Active Monitors"
                 count="+91"
                 percentage={{
                   color: "success",
@@ -103,6 +102,16 @@ function Dashboard() {
             </MDBox>
           </Grid>
         </Grid>
+
+        {/* Label Compliance Monitor Table */}
+        <MDBox mt={4.5}>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <LabelComplianceMonitor />
+            </Grid>
+          </Grid>
+        </MDBox>
+
         <MDBox mt={4.5}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={4}>
@@ -141,16 +150,6 @@ function Dashboard() {
                   chart={tasks}
                 />
               </MDBox>
-            </Grid>
-          </Grid>
-        </MDBox>
-        <MDBox>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={6} lg={8}>
-              <Projects />
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <OrdersOverview />
             </Grid>
           </Grid>
         </MDBox>

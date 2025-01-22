@@ -57,7 +57,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Tables",
+    name: "Label Compliance Monitor",
     key: "tables",
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/tables",
